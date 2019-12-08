@@ -7,6 +7,10 @@ public class IterativeCollector implements Collector {
 
     @Override
     public Collection<Integer> collect(String input) {
+        if(input == null) {
+            throw new IllegalArgumentException("Please provide valid input");
+        }
+
         String [] arrayOfString = input.split (FIELD_SEPARATOR.toString());
         Set<Integer> numberSet = new TreeSet<>();
 

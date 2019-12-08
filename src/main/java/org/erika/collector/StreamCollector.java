@@ -11,6 +11,10 @@ public class StreamCollector implements Collector {
 
     @Override
     public Collection<Integer> collect(String input) {
+        if(input == null) {
+            throw new IllegalArgumentException("Please provide valid input");
+        }
+
         return splitString(input).stream()
                 .filter(str -> !str.isEmpty())
                 .map(Integer::parseInt)
