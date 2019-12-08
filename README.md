@@ -12,7 +12,7 @@ A TreeSet is used to enforce order and to ensure no duplicate elements.
 #### StreamCollector
 The stream collector utilizes the more advanced Java Streams to simplify creating a collection from the input.
 On the stream, filter and deduplication steps are used to supply a clean output.
-The TreeSet mentioned above is likely more performant. 
+The TreeSet mentioned above is likely better performing. 
 ### Summarizers 
 
 #### IterativeSummarizer
@@ -24,7 +24,7 @@ If a sequential pair is detected, a secondary while loop is entered to scan unti
 Ranges for negative numbers can possibly look peculiar:
 Example: for array input [-6, -5, -4] will produce "-6--4"
 
-Empty inputs are not mentioned but can be handled
+Empty inputs are not mentioned but can be handled.
 Example: for string input "1,4,6,,,8,9" will produce [1, 4, 6, 8, 9]
 
 For single sequential numbers a good question will be whether the input for "1, 2, 5" is to be computed as "1-2, 5" or "1, 2, 5"
