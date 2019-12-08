@@ -11,7 +11,9 @@ public class IterativeCollector implements Collector {
         Set<Integer> numberSet = new TreeSet<>();
 
         for(String numberString: arrayOfString) {
-            numberSet.add(Integer.parseInt(numberString));
+            if(!numberString.isEmpty()) {
+                numberSet.add(Integer.parseInt(numberString));
+            }
         }
 
         return numberSet;

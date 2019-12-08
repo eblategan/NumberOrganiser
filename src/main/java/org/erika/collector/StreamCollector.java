@@ -12,6 +12,7 @@ public class StreamCollector implements Collector {
     @Override
     public Collection<Integer> collect(String input) {
         return splitString(input).stream()
+                .filter(str -> !str.isEmpty())
                 .map(Integer::parseInt)
                 .sorted()
                 .distinct()
