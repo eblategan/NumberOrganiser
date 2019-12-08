@@ -12,6 +12,14 @@ public class IterativeSummarizer implements Summarizer {
         return true;
     }
 
+    private boolean containsNulls(Comparable[] array) {
+        for (int i = 0; i < array.length - 1; i++) {
+            if (array[i] == null)
+                return true;
+        }
+        return false;
+    }
+
     @Override
     public String summarizeCollection(Collection<Integer> input) {
         if(input == null) {
@@ -23,6 +31,9 @@ public class IterativeSummarizer implements Summarizer {
 
         if(!isSorted(array)) {
             throw new IllegalArgumentException("input must be sorted");
+        }
+        if(containsNulls(array)) {
+            throw new IllegalArgumentException("input must not contain nulls");
         }
 
         StringBuilder output = new StringBuilder();

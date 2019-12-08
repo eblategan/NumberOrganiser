@@ -45,7 +45,7 @@ public interface CollectInterfaceTest {
     @Test
     @DisplayName("test collection with bad input")
     default void testCollectWithBadInput() {
-        final String input = "1,,,,@2,5,10";
+        final String input = "1,,,,@2,5,10,bb";
         assertThrows(NumberFormatException.class, () -> getCollector().collect(input));
     }
 
